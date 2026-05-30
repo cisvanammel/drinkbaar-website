@@ -1,22 +1,53 @@
 :root{
-  --bg:#0f1724;
-  --muted:#9ca3af;
-  --accent:#f59e0b;
-  --card:#0b1220;
+  --bg:#fbfbf8;
+  --muted:#475569;
+  --accent:#0ea5a4;
+  --card:#ffffff;
+  --card-border:#e6e9ef;
+  --text:#0f1724;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071026 0%, #08121a 100%);color:#e6eef8;line-height:1.5}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#fbfbf8 0%, #f3f4f6 100%);color:var(--text);line-height:1.5}
 .container{max-width:1000px;margin:0 auto;padding:1.5rem}
 .site-header{background:transparent;padding:.75rem 0}
 .site-header .logo{height:44px;vertical-align:middle}
-.main-nav{float:right}
-.main-nav a{color:var(--muted);margin-left:1rem;text-decoration:none}
-.hero{padding:4rem 0;text-align:center}
-.hero h1{font-size:2.25rem;margin:.25rem 0}
-.btn{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:#071026;border-radius:6px;text-decoration:none;font-weight:600}
+.site-header{background:var(--card);padding:.75rem 0;border-bottom:1px solid var(--card-border);position:fixed;top:0;left:0;right:0;z-index:70}
+.site-header .container{position:relative}
+.site-header .logo{height:44px;vertical-align:middle;display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.hamburger{position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.hamburger .bar{display:block;width:18px;height:2px;background:var(--text);position:relative}
+.hamburger .bar:before,.hamburger .bar:after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--text)}
+.hamburger .bar:before{top:-6px}
+.hamburger .bar:after{top:6px}
+
+.main-nav{position:fixed;left:0;top:0;height:100vh;width:280px;max-width:80%;background:var(--card);border-right:1px solid var(--card-border);box-shadow:8px 0 30px rgba(15,23,36,0.06);padding:2rem 1rem;transform:translateX(-100%);transition:transform .28s ease;z-index:60}
+.main-nav .nav-close{position:absolute;right:12px;top:12px;border:0;background:transparent;font-size:22px;line-height:1;color:var(--text);cursor:pointer}
+.main-nav a{display:block;padding:.75rem 0;color:var(--text);text-decoration:none;text-align:left;padding-left:0.5rem}
+.site-header.nav-open .main-nav{transform:translateX(0)}
+
+.nav-overlay{position:fixed;inset:0;background:rgba(15,23,36,0.45);opacity:0;transition:opacity .28s ease;pointer-events:none;z-index:50}
+.site-header.nav-open .nav-overlay{opacity:1;pointer-events:auto}
+
+/* keep hamburger visible on all screen sizes; nav opens via hamburger */
+.hero{padding:4rem 0}
+main{padding-top:76px}
+.container > section, section{scroll-margin-top:76px}
+.hero h1{font-size:2.5rem;margin:.25rem 0;color:var(--text);letter-spacing:-0.5px}
+.hero p{color:var(--muted);margin:0 0 1rem 0}
+
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-content{max-width:60ch}
+.hero-media{border-radius:12px;overflow:hidden;min-height:260px;background:linear-gradient(180deg,#f8fafc,#eef2f7);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center}
+.hero-media svg{width:100%;height:100%;display:block}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-media{min-height:180px;margin-top:1rem}
+}
+.btn{display:inline-block;margin-top:1rem;padding:.6rem 1rem;background:var(--accent);color:#ffffff;border-radius:6px;text-decoration:none;font-weight:600;box-shadow:0 6px 14px rgba(14,165,164,0.12)}
 .about,.products,.contact{padding:2rem 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.card{background:rgba(255,255,255,0.03);padding:1rem;border-radius:8px}
-.site-footer{padding:1.25rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+.card{background:var(--card);padding:1rem;border-radius:8px;border:1px solid var(--card-border);box-shadow:0 6px 18px rgba(15,23,36,0.04)}
+.site-footer{padding:1.25rem 0;text-align:center;color:var(--muted);border-top:1px solid var(--card-border)}
 
 @media (max-width:700px){.main-nav{float:none;text-align:right;margin-top:.5rem}.hero h1{font-size:1.75rem}}
