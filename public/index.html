@@ -1,118 +1,45 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Drinkbaar</title>
-  <meta name="description" content="Drinkbaar — Ambachtelijke small-batch bieren, geïnspireerd door België en de wereld.">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff3e4">
+<title>Drinkbaar — Bruin Kroeg | Belgisch amberbier</title>
+<meta name="description" content="Bruin Kroeg van Drinkbaar. Belgisch amberbier van hoge gisting met een milde rooksmaak, gelagerd op eikenhoutsnippers.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <button class="hamburger" aria-label="Menu openen" aria-expanded="false">
-        <span class="bar"></span>
-      </button>
-
-      <img src="assets/img/logo.svg" alt="Drinkbaar logo" class="logo">
-
-      <nav class="main-nav" aria-label="Hoofdmenu" aria-hidden="true">
-        <button class="nav-close" aria-label="Sluiten">✕</button>
-        <a href="#about">Over ons</a>
-        <a href="#products">Assortiment</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<section class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-description">
+  <div class="age-card">
+    <p class="brand age-brand">DRINKBAAR</p>
+    <p class="eyebrow">LEEFTIJDSCONTROLE · 18+</p>
+    <h2 id="age-title" tabindex="-1">Ben je 18 jaar of ouder?</h2>
+    <p id="age-description">Deze website is uitsluitend bedoeld voor bezoekers van 18 jaar en ouder.</p>
+    <div class="age-actions" id="age-actions">
+      <button type="button" id="age-confirm" disabled>Ja, ik ben 18 of ouder</button>
+      <button type="button" id="age-deny" class="age-secondary" disabled>Nee, ik ben jonger dan 18</button>
     </div>
-  </header>
-
-  <div class="nav-overlay" aria-hidden="true"></div>
-
-  <main>
-    <section id="about" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Drinkbaar</h1>
-          <p>Bij Drinkbaar draait alles om het brouwen van unieke, gemakkelijk drinkbare bieren. We hebben Belgische roots en laten ons inspireren door bieren van over de hele wereld — traditie en internationale smaken komen samen in toegankelijke, karaktervolle recepten.</p>
-
-          <p>Onze focus is balans en plezier: bieren die uitnodigen om te delen, met vriendelijke bitterheid en duidelijke aroma's. We werken in kleine batches met aandacht voor kwaliteit en eenvoud.</p>
-        </div>
-
-        <div class="hero-media" aria-hidden="true">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Afbeelding (plaatsaanduiding)">
-            <rect width="100%" height="100%" fill="#f8fafc" />
-            <g fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle">
-              <text x="50%" y="48%">Afbeelding</text>
-              <text x="50%" y="64%" font-size="12">(plaatsaanduiding)</text>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <section id="products" class="container products">
-      <h2>Assortiment</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Core IPA</h3>
-          <p>Hoprijk en aromatisch — 6,5% ABV.</p>
-        </article>
-        <article class="card">
-          <h3>Amber Ale</h3>
-          <p>Moutig en soepel — 5,2% ABV.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="container contact">
-      <h2>Contact</h2>
-      <p>E-mail: hello@drinkbaar.example</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2026 Drinkbaar — Voor smaak en samenkomen.</div>
-  </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      var header = document.querySelector('.site-header');
-      var btn = document.querySelector('.hamburger');
-      var nav = document.querySelector('.main-nav');
-      var closeBtn = document.querySelector('.nav-close');
-      var overlay = document.querySelector('.nav-overlay');
-      var links = document.querySelectorAll('.main-nav a');
-
-      function setOpen(open){
-        if (open){
-          header.classList.add('nav-open');
-        } else {
-          header.classList.remove('nav-open');
-        }
-        btn.setAttribute('aria-expanded', !!open);
-        nav.setAttribute('aria-hidden', !open);
-        overlay.setAttribute('aria-hidden', !open);
-      }
-
-      btn.addEventListener('click', function(e){
-        e.stopPropagation();
-        setOpen(!header.classList.contains('nav-open'));
-      });
-
-      closeBtn.addEventListener('click', function(e){
-        e.stopPropagation();
-        setOpen(false);
-        btn.focus();
-      });
-
-      overlay.addEventListener('click', function(){ setOpen(false); });
-
-      links.forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
-
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape') setOpen(false);
-      });
-    });
-  </script>
-</body>
-</html>
+    <noscript><p>Schakel JavaScript in om je leeftijd te bevestigen. De website blijft tot dan gesloten.</p></noscript>
+    <p class="age-footnote">Alcohol schaadt de gezondheid</p>
+  </div>
+</section>
+<div class="site-content" id="site-content" hidden inert>
+<a class="skip-link" href="#main">Naar de inhoud</a>
+<header class="site-header wrap"><a class="brand" href="#" aria-label="Drinkbaar, naar boven">DRINKBAAR</a><p class="header-note">Belgisch bier</p></header>
+<main id="main">
+<section id="bier" class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">Bruin<br>Kroeg<span class="title-period">.</span></h1>
+    <p class="hero-description">
+        Denk aan een bruine kroeg, het eikenhout aan de muur, de rook in de gordijnen en de geur van heerlijk bier. Denk aan de goeie momenten, de straffe verhalen, de goeie moppen en de flauwe moppen. Denk aan het kameraadschap met oude bekenden en nieuwe onbekenden. Aan de toog is iedereen gelijk. Dat is onze cafécultuur en dat is de essentie van Bruin Kroeg.</p>
+  </div>
+  <figure class="hero-art">
+    <div class="photo-frame"><img class="product-photo" src="assets/img/bruin-kroeg-soft-reflections.png" alt="Productvisualisatie naar de echte Drinkbaar Bruin Kroeg fles: donkerbruin glas, gouden kroonkurk en een crèmekleurig etiket met barkruk, op een houten cafétafel" width="1024" height="1536" fetchpriority="high"></div>
+  </figure>
+</section>
+</main>
+<footer class="site-footer wrap">
+  <p>© <span id="year">2026</span> Drinkbaar</p>
+  <p>Alcohol schaadt de gezondheid</p>
+</footer>
+</div>
+<script src="assets/js/age-gate.js" defer></script>
+</body></html>
