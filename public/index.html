@@ -18,12 +18,22 @@
       <button type="button" id="age-deny" class="age-secondary" disabled>Nee, ik ben jonger dan 18</button>
     </div>
     <noscript><p>Schakel JavaScript in om je leeftijd te bevestigen. De website blijft tot dan gesloten.</p></noscript>
-    <p class="age-footnote">Alcohol schaadt de gezondheid</p>
+    <p><a class="text-link" href="privacy.html">Privacyverklaring</a></p>
+    <p class="alcohol-warning age-warning">Alcohol schaadt de gezondheid</p>
   </div>
 </section>
 <div class="site-content" id="site-content" hidden inert>
 <a class="skip-link" href="#main">Naar de inhoud</a>
-<header class="site-header wrap"><a class="brand" href="#" aria-label="Drinkbaar, naar boven">DRINKBAAR</a><p class="header-note">Belgisch bier</p></header>
+<header class="site-header wrap">
+  <a class="brand" href="#bier" aria-label="Drinkbaar, naar ons bier">DRINKBAAR</a>
+  <nav class="site-nav" aria-label="Hoofdnavigatie">
+    <ul>
+      <li><a href="#bier">Ons bier</a></li>
+      <li><a href="#over-ons">Over ons</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 <main id="main">
 <section id="bier" class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
@@ -35,11 +45,45 @@
     <div class="photo-frame"><img class="product-photo" src="assets/img/bruin-kroeg-soft-reflections.png" alt="Productvisualisatie naar de echte Drinkbaar Bruin Kroeg fles: donkerbruin glas, gouden kroonkurk en een crèmekleurig etiket met barkruk, op een houten cafétafel" width="1024" height="1536" fetchpriority="high"></div>
   </figure>
 </section>
+<section id="over-ons" class="about wrap" aria-labelledby="about-title">
+  <div class="about-heading">
+    <p class="eyebrow">OVER ONS</p>
+    <h2 id="about-title">Het begon met een mop<span class="title-period">.</span></h2>
+    <blockquote>“Als het maar drinkbaar is”</blockquote>
+  </div>
+  <div class="about-story">
+    <p>Het begon op café, terwijl we samen bier proefden. Wat als we zelf eens bier maakten? We gingen aan de slag en brouwden ons eerste bier. En warempel: het was drinkbaar.</p>
+    <p>Met elk brouwsel kregen we de smaak meer te pakken en werd ons bier beter dan zomaar drinkbaar. Maar de mop bleef hangen. En de naam dus ook. Intussen is onze hobby uitgegroeid tot een passie die we met de wereld willen delen.</p>
+    <p>Drinkbaar knipoogt ook naar een oude legende: in de middeleeuwen zou het water zo vervuild zijn geweest dat alleen bier nog drinkbaar was.<sup><a class="text-link" href="#legende-toelichting" aria-label="Lees de toelichting bij de legende">*</a></sup> Voor ons gaat de naam vooral over smaak en over onszelf niet al te serieus nemen.</p>
+    <p>Ons bier nemen we wél serieus. We gaan voor hoge kwaliteit en verkennen graag minder alledaagse smaken. Toch moet ons bier toegankelijk blijven: het mag je verrassen en tegelijk vertrouwd aanvoelen. Nieuw én herkenbaar. En bovenal: drinkbaar.</p>
+    <p id="legende-toelichting" class="about-footnote" tabindex="-1">* Deze legende is folklore, geen historisch feit of gezondheidsclaim. Ze is geen reden om bier boven water te verkiezen.</p>
+  </div>
+</section>
+<section id="contact" class="contact wrap" aria-labelledby="contact-title">
+  <div class="contact-copy">
+    <p class="eyebrow">EEN VRAAG OF EEN GOED VERHAAL?</p>
+    <h2 id="contact-title">Laat van je horen<span class="title-period">.</span></h2>
+    <p>Heb je een vraag, een idee of gewoon zin om iets te vertellen? Stuur ons een bericht. We horen graag van je.</p>
+  </div>
+  <div class="contact-details">
+    <p class="eyebrow">MAIL ONS</p>
+    <a class="contact-email text-link" href="mailto:info@amelu.be">info@amelu.be</a>
+    <address>Amelu BV<br>Groenstraat 1<br>2820 Bonheiden, België</address>
+    <p>Btw-nummer: BE 0689.586.163</p>
+    <p><a class="text-link" href="privacy.html">Hoe we met je gegevens omgaan</a></p>
+  </div>
+</section>
 </main>
 <footer class="site-footer wrap">
-  <p>© <span id="year">2026</span> Drinkbaar</p>
-  <p>Alcohol schaadt de gezondheid</p>
+  <div class="company-details">
+    <p>© <span id="year">2026</span> Drinkbaar · Amelu BV</p>
+    <p>Groenstraat 1, 2820 Bonheiden, België</p>
+    <p>Btw-nummer: BE 0689.586.163</p>
+    <p><a class="text-link" href="mailto:info@amelu.be">info@amelu.be</a></p>
+  </div>
+  <p><a class="text-link" href="privacy.html">Privacyverklaring</a></p>
 </footer>
+<p class="alcohol-warning bottom-warning">Alcohol schaadt de gezondheid</p>
 </div>
 <script src="assets/js/age-gate.js" defer></script>
 </body></html>

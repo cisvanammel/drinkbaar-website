@@ -48,15 +48,19 @@
   gate.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') event.preventDefault();
     if (event.key !== 'Tab') return;
-    if (actions.hidden) {
+    const focusable = [...gate.querySelectorAll('button:not(:disabled), a[href]')]
+      .filter((element) => !element.closest('[hidden]'));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first) {
       event.preventDefault();
       title.focus();
-    } else if (event.shiftKey && (document.activeElement === confirm || document.activeElement === title)) {
+    } else if (event.shiftKey && (document.activeElement === first || document.activeElement === title)) {
       event.preventDefault();
-      deny.focus();
-    } else if (!event.shiftKey && document.activeElement === deny) {
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
       event.preventDefault();
-      confirm.focus();
+      first.focus();
     }
   });
 
