@@ -16,7 +16,7 @@ Visit http://localhost:8000. The existing GitHub Pages workflow deploys `public/
 
 Edit `public/index.html` for copy and `public/assets/css/style.css` for styling. The generated product visualization is in `public/assets/img/bruin-kroeg-soft-reflections.png`. It is based on the actual product photograph and supplied label, with the barcode and administrative fine print omitted. The built-in image generation prompt is recorded in `docs/product-photo-refinement.md`.
 
-The contact section displays Amelu BV's postal address, VAT number, and a `mailto:info@amelu.be` link. Visitors send messages through their own email application; the website has no contact form or submission service.
+The contact section contains a form that submits form-encoded data to the configured external endpoint in `public/index.html`. The frontend integration lives in `public/assets/js/contact-form.js`; a direct `mailto:info@amelu.be` link remains available as a fallback. The endpoint implementation is maintained outside this public repository.
 
 The Dutch privacy statement lives in `public/privacy.html` and is accessible without the age gate or JavaScript. Links are provided on the age gate, in the contact section, and in the footer. Privacy requests go to `info@amelu.be`. The statement describes email and postal correspondence, GitHub Pages, and session storage; keep it in sync with changes to those services.
 

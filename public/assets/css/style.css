@@ -108,6 +108,49 @@ h1 { font-size: clamp(64px, 12vh, 108px); font-size: clamp(64px, 12svh, 108px); 
 .contact-email { display: inline-block; padding-block: 8px; font-size: clamp(20px, 3vw, 28px); font-weight: 700; overflow-wrap: anywhere; }
 .contact-details address { margin-top: 24px; font-style: normal; font-size: 15px; line-height: 1.8; color: var(--muted); }
 .contact-details > p:not(.eyebrow) { margin: 16px 0 0; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.contact-form { display: grid; gap: 16px; }
+.form-field { display: grid; gap: 7px; }
+.form-field label { font-size: 12px; line-height: 1.4; }
+.form-field label > span:not(.optional) { color: #826347; }
+.form-field .optional { color: var(--muted); font-size: 11px; }
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-field textarea { min-height: 150px; resize: vertical; }
+.form-field input:focus, .form-field textarea:focus { outline: 2px dashed var(--ink); outline-offset: 2px; }
+.form-field input:invalid:not(:placeholder-shown), .form-field textarea:invalid:not(:placeholder-shown) { border-color: #8b3e2f; }
+.form-submit {
+  justify-self: start;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+.form-submit:hover:not(:disabled), .form-submit:focus-visible { background: #544333; }
+.form-submit:focus-visible { outline: 2px dashed var(--ink); outline-offset: 4px; }
+.form-submit:disabled { opacity: .6; cursor: wait; }
+.form-status { min-height: 1.6em; margin: 0 !important; font-size: 12px !important; }
+.form-status[data-state="error"] { color: #8b3e2f; }
+.form-status[data-state="success"] { color: #44643e; }
+.form-note { margin: 0 !important; font-size: 11px !important; }
+.form-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.contact-direct { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.contact-direct .eyebrow { margin-bottom: 8px; }
+.contact-direct address { margin-top: 14px; }
+.contact-direct > p:last-child { margin-top: 8px; }
 
 .privacy-page { min-height: 100svh; display: flex; flex-direction: column; }
 .privacy-page .site-header { position: static; align-self: auto; }
